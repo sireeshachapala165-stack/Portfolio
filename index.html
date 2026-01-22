@@ -1,47 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sireesha | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Sireesha | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+}
+
+/* NAVBAR */
+nav{
+  background:#182848;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+}
+
+nav ul li{
+  margin-left:20px;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+  background:white;
+  width:80%;
+  margin:40px auto;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.active{
+  display:block;
+}
+
+/* HOME */
+.hero{
+  text-align:center;
+  background:linear-gradient(to right,#4b6cb7,#182848);
+  color:white;
+  padding:60px 20px;
+  border-radius:10px;
+}
+
+.profile-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:4px solid white;
+  margin-bottom:20px;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  background:#4b6cb7;
+  color:white;
+  padding:10px 18px;
+  margin:8px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+/* CARDS */
+.card{
+  background:#eef2ff;
+  padding:20px;
+  margin-top:15px;
+  border-radius:8px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px;
+  background:#182848;
+  color:white;
+  margin-top:40px;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Sireesha Chapala</h1>
-  <p>B.Tech AIML Student | Aspiring Software Engineer</p>
+<!-- NAVBAR -->
+<nav>
+  <h2>Sireesha</h2>
+  <ul>
+    <li><a onclick="showSection('home')">Home</a></li>
+    <li><a onclick="showSection('about')">About</a></li>
+    <li><a onclick="showSection('skills')">Skills</a></li>
+    <li><a onclick="showSection('projects')">Projects</a></li>
+    <li><a onclick="showSection('certifications')">Certifications</a></li>
+    <li><a onclick="showSection('contact')">Contact</a></li>
+  </ul>
+</nav>
 
-  <h2>About Me</h2>
+<!-- HOME -->
+<div id="home" class="section active">
+  <div class="hero">
+    <img src="profile.jpg" class="profile-img">
+    <h1>Sireesha Chapala</h1>
+    <p>B.Tech AIML Student | Aspiring Software Engineer</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+  <h1>About Me</h1>
   <p>
     I am a B.Tech 3rd year student specializing in Artificial Intelligence
-    and Machine Learning. I am passionate about technology, problem-solving,
-    and learning new skills.
+    and Machine Learning. I am passionate about solving real-world problems
+    using programming, AI concepts, and logical thinking.
   </p>
+</div>
 
-  <h2>Skills</h2>
+<!-- SKILLS -->
+<div id="skills" class="section">
+  <h1>Technical Skills</h1>
+  <div class="skills">
+    <span>Python</span>
+    <span>Java</span>
+    <span>Machine Learning</span>
+    <span>Artificial Intelligence</span>
+    <span>Cybersecurity Fundamentals</span>
+    <span>HTML & CSS</span>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section">
+  <h1>Projects</h1>
+
+  <div class="card">
+    <h3>Student Management System</h3>
+    <p>Java-based application to manage student records.</p>
+  </div>
+
+  <div class="card">
+    <h3>Machine Learning Mini Project</h3>
+    <p>Prediction and analysis using ML algorithms.</p>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div id="certifications" class="section">
+  <h1>Certifications</h1>
   <ul>
-    <li>Python</li>
-    <li>Java</li>
-    <li>Machine Learning Basics</li>
-    <li>Artificial Intelligence</li>
     <li>Cybersecurity Fundamentals</li>
   </ul>
+</div>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Student Management System (Java)</li>
-    <li>Machine Learning Mini Project</li>
-    <li>Academic AIML Projects</li>
-  </ul>
-
-  <h2>Certifications</h2>
-  <p>Cybersecurity Fundamentals</p>
-
-  <h2>Contact</h2>
+<!-- CONTACT -->
+<div id="contact" class="section">
+  <h1>Contact Me</h1>
+  <p>Email: your-email@gmail.com</p>
   <p>
     LinkedIn:
-    <a href="https://www.linkedin.com/in/sireesha-chapala-629027291">
+    <a href="https://www.linkedin.com/in/sireesha-chapala-629027291" target="_blank">
       View Profile
     </a>
   </p>
+  <p>
+    GitHub:
+    <a href="https://github.com/yourusername" target="_blank">
+      Visit GitHub
+    </a>
+  </p>
+</div>
+
+<footer>
+  © 2026 Sireesha Chapala
+</footer>
+
+<script>
+function showSection(id){
+  const sections=document.querySelectorAll('.section');
+  sections.forEach(section=>section.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
